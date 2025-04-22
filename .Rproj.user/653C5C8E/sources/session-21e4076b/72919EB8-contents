@@ -1,21 +1,20 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "Website"
+  title: "Kristie's Data Website"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
-
+      - text: Home
+        file: index.qmd
+      - text: Dashboard
+        file: dashboard.qmd
+      - text: Shiny Apps
+        file: shiny-apps.qmd
+      - text: Shinylive
+        file: shinylive.qmd
 format:
   html:
-    theme:
-      - cosmo
-      - brand
-    css: styles.css
+    theme: cosmo
     toc: true
-
-editor: visual
-
