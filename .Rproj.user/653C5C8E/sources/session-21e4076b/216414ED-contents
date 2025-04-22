@@ -1,0 +1,55 @@
+---
+title: "Dodgers Attendance"
+format: html
+---
+
+## Introduction
+
+This dashboard explores attendance trends for the Los Angeles Dodgers from 1958 to 2024. It includes a visual overview of total season attendance by year, offering a clear look at how fan turnout has shifted across decades. The data was compiled from public records and includes a few missing entries for unusual seasons (e.g., COVID years), which are noted but not removed to preserve historical context. \## Season Attendance Over Time
+
+```{r}
+library(readr)
+library(ggplot2)
+
+# Load your dataset
+dodgers <- read_csv("Dodgers_Attendance_Data.csv")
+
+# Simple line plot
+ggplot(dodgers, aes(x = Year, y = Total_Season_Attendance)) +
+  geom_line(color = "dodgerblue", size = 1.2) +
+  labs(
+    title = "Dodgers Season Attendance (1958–2024)",
+    x = "Year",
+    y = "Total Attendance"
+  ) +
+  theme_minimal()
+```
+
+## Dodgers vs. National League Average Attendance
+
+This chart compares the Dodgers' total season attendance to the National League average for each year. It highlights how consistently the Dodgers have led the league in fan turnout — with only a few exceptions.
+
+```{r}
+# Convert data into long format for grouped plotting
+dodgers_long <- dodgers %>%
+  pivot_longer(
+    cols = c(Total_Season_Attendance, NL_Avg_Attendance),
+    names_to = "Category",
+    values_to = "Attendance"
+  )
+
+# Plot
+ggplot(dodgers_long, aes(x = Year, y = Attendance, color = Category)) +
+  geom_line(size = 1.2) +
+  labs(
+    title = "Dodgers vs. NL Average Season Attendance (1958–2024)",
+    x = "Year",
+    y = "Attendance",
+    color = ""
+  ) +
+  scale_color_manual(
+    values = c("Total_Season_Attendance" = "dodgerblue", "NL_Avg_Attendance" = "gray40"),
+    labels = c("Dodgers", "NL Average")
+  ) +
+  theme_minimal()
+```

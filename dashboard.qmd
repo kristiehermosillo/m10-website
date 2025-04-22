@@ -1,0 +1,36 @@
+---
+title: "My Dashboard"
+format: html
+---
+
+## Introduction
+
+This dashboard explores attendance trends for the Los Angeles Dodgers from 1958 to 2024...
+
+```{r}
+library(tidyverse)
+dodgers <- read_csv("Dodgers_Attendance_Data.csv")
+
+ggplot(dodgers, aes(x = Year, y = Total_Season_Attendance)) +
+  geom_line(color = "dodgerblue", size = 1.2) +
+  labs(title = "Dodgers Total Season Attendance (1958–2024)",
+       y = "Total Attendance", x = "Year") +
+  theme_minimal()
+
+dodgers_long <- dodgers %>%
+  pivot_longer(
+    cols = c(Total_Season_Attendance, NL_Avg_Attendance),
+    names_to = "Category",
+    values_to = "Attendance"
+  )
+
+ggplot(dodgers_long, aes(x = Year, y = Attendance, color = Category)) +
+  geom_line(size = 1.2) +
+  labs(title = "Dodgers vs. NL Average Season Attendance (1958–2024)",
+       y = "Attendance", x = "Year", color = "") +
+  scale_color_manual(
+    values = c("Total_Season_Attendance" = "dodgerblue", "NL_Avg_Attendance" = "gray40"),
+    labels = c("Dodgers", "NL Average")
+  ) +
+  theme_minimal()
+```

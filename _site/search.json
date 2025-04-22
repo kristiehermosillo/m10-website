@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "dashboard.html",
+    "href": "dashboard.html",
+    "title": "My Dashboard",
+    "section": "",
+    "text": "This dashboard explores attendance trends for the Los Angeles Dodgers from 1958 to 2024…\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ndodgers &lt;- read_csv(\"Dodgers_Attendance_Data.csv\")\n\nRows: 67 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): Ballpark\ndbl (4): Year, Game_Avg_Attendance, Total_Season_Attendance, NL_Avg_Attendance\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nggplot(dodgers, aes(x = Year, y = Total_Season_Attendance)) +\n  geom_line(color = \"dodgerblue\", size = 1.2) +\n  labs(title = \"Dodgers Total Season Attendance (1958–2024)\",\n       y = \"Total Attendance\", x = \"Year\") +\n  theme_minimal()\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n\n\n\n\n\n\ndodgers_long &lt;- dodgers %&gt;%\n  pivot_longer(\n    cols = c(Total_Season_Attendance, NL_Avg_Attendance),\n    names_to = \"Category\",\n    values_to = \"Attendance\"\n  )\n\nggplot(dodgers_long, aes(x = Year, y = Attendance, color = Category)) +\n  geom_line(size = 1.2) +\n  labs(title = \"Dodgers vs. NL Average Season Attendance (1958–2024)\",\n       y = \"Attendance\", x = \"Year\", color = \"\") +\n  scale_color_manual(\n    values = c(\"Total_Season_Attendance\" = \"dodgerblue\", \"NL_Avg_Attendance\" = \"gray40\"),\n    labels = c(\"Dodgers\", \"NL Average\")\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "dashboard.html#introduction",
+    "href": "dashboard.html#introduction",
+    "title": "My Dashboard",
+    "section": "",
+    "text": "This dashboard explores attendance trends for the Los Angeles Dodgers from 1958 to 2024…\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\ndodgers &lt;- read_csv(\"Dodgers_Attendance_Data.csv\")\n\nRows: 67 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): Ballpark\ndbl (4): Year, Game_Avg_Attendance, Total_Season_Attendance, NL_Avg_Attendance\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\nggplot(dodgers, aes(x = Year, y = Total_Season_Attendance)) +\n  geom_line(color = \"dodgerblue\", size = 1.2) +\n  labs(title = \"Dodgers Total Season Attendance (1958–2024)\",\n       y = \"Total Attendance\", x = \"Year\") +\n  theme_minimal()\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n\n\n\n\n\n\ndodgers_long &lt;- dodgers %&gt;%\n  pivot_longer(\n    cols = c(Total_Season_Attendance, NL_Avg_Attendance),\n    names_to = \"Category\",\n    values_to = \"Attendance\"\n  )\n\nggplot(dodgers_long, aes(x = Year, y = Attendance, color = Category)) +\n  geom_line(size = 1.2) +\n  labs(title = \"Dodgers vs. NL Average Season Attendance (1958–2024)\",\n       y = \"Attendance\", x = \"Year\", color = \"\") +\n  scale_color_manual(\n    values = c(\"Total_Season_Attendance\" = \"dodgerblue\", \"NL_Avg_Attendance\" = \"gray40\"),\n    labels = c(\"Dodgers\", \"NL Average\")\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "index.html#career-aspiration",
+    "href": "index.html#career-aspiration",
+    "title": "My Dashboard",
+    "section": "Career Aspiration",
+    "text": "Career Aspiration\nI’m interested in working in the marketing space—especially in roles where I can use data and digital tools to make smarter decisions. My goal is to help teams understand what’s working, what’s not, and how to communicate better with the people they’re trying to reach. I’ve been building skills in data visualization, dashboards, and interactive reporting so I can translate numbers into something useful. Eventually, I’d like to work somewhere that values both strategy and execution—where I can contribute to meaningful campaigns with real results."
+  },
+  {
+    "objectID": "index.html#skills",
+    "href": "index.html#skills",
+    "title": "My Dashboard",
+    "section": "Skills",
+    "text": "Skills\n\nR / Quarto / Shiny / Shinylive\nPython / Tableau\nData cleaning and dashboarding\nResearch communication"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "My Dashboard",
+    "section": "Education",
+    "text": "Education\nA.S. Business Administration and Management, Mt.San Antonio College\nB.A. Business Administration and Management with a concentration in Marketing, University of La Verne\nMSDM Student, Cal Poly Pomona"
+  },
+  {
+    "objectID": "index.html#dashboard",
+    "href": "index.html#dashboard",
+    "title": "My Dashboard",
+    "section": "Dashboard",
+    "text": "Dashboard\nThis dashboard explores attendance trends for the Los Angeles Dodgers from 1958 to 2024…"
+  },
+  {
+    "objectID": "index.html#conclusion",
+    "href": "index.html#conclusion",
+    "title": "My Dashboard",
+    "section": "Conclusion",
+    "text": "Conclusion\nThis dashboard highlights the strong and consistent fanbase of the Los Angeles Dodgers, whose attendance has often outpaced the National League average across decades. Even during league-wide downturns or disrupted seasons, the Dodgers have remained a reliable draw. The comparison underscores the team’s legacy, loyalty, and lasting impact on Major League Baseball attendance trends."
+  },
+  {
+    "objectID": "index.html#essay-on-shiny-apps",
+    "href": "index.html#essay-on-shiny-apps",
+    "title": "My Dashboard",
+    "section": "Essay on Shiny Apps",
+    "text": "Essay on Shiny Apps\n\nWhat is a Shiny App?\nShiny is an R package that turns analysis into interactive web applications using R.\n\n\nHow It Works\n\nUI is defined using fluidPage, sidebarLayout, and other layout functions.\nServer logic lives in a reactive function that listens for input.\nApps can be launched locally or hosted online (e.g., shinyapps.io).\n\n\n\nTeaching It to Coworkers\nIf I were introducing Shiny to a teammate, I’d start by showing a basic layout with inputs and outputs. Then I’d walk them through how changes to an input — like a slider or dropdown — instantly update the visual or output using reactive logic. The key is that the UI and server components talk to each other live, making the app dynamic and customizable."
+  },
+  {
+    "objectID": "index.html#essay-on-shinylive",
+    "href": "index.html#essay-on-shinylive",
+    "title": "My Dashboard",
+    "section": "Essay on Shinylive",
+    "text": "Essay on Shinylive\n\nWhat is Shinylive?\nShinylive is a lightweight version of Shiny that runs entirely in the browser, no server required.\n\n\nComparison with Shiny Apps\n\n\n\n\n\n\n\n\nFeature\nShiny\nShinylive\n\n\n\n\nServer Needed\nYes\nNo\n\n\nDeployment\nshinyapps.io, self-hosting\nQuarto Pub, GitHub Pages\n\n\nBest For\nHeavy computation\nLightweight, browser-only apps\n\n\n\n\n\nPros and Cons\nPros: - Super easy to share — no hosting or server needed - Runs in the browser - Great for small apps and demos\nCons: - Can’t use all R packages (only browser-compatible ones) - Slower with large datasets - Not ideal for heavy data processing or authentication\n\nThis site was built in Quarto as part of the M10 hands-on assignment. All charts, essays, and formatting reflect personal understanding of course materials as of April 2025."
+  }
+]

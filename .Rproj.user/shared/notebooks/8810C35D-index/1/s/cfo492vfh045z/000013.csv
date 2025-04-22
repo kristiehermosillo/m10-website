@@ -1,0 +1,8 @@
+"0","# Load data + chart"
+"0","library(tidyverse)"
+"0","dodgers <- read_csv(""Dodgers_Attendance_Data.csv"")"
+"0","ggplot(dodgers, aes(x = Year, y = Total_Season_Attendance)) +"
+"0","  geom_line(color = ""dodgerblue"", size = 1.2) +"
+"0","  labs(title = ""Dodgers Total Season Attendance (1958–2024)"","
+"0","       y = ""Total Attendance"", x = ""Year"") +"
+"0","  theme_minimal()"
