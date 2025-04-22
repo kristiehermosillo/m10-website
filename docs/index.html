@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Dashboard – Website</title>
+<title>My Dashboard – Kristie’s Data Website</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -102,7 +68,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -113,7 +78,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Website</span>
+    <span class="navbar-title">Kristie’s Data Website</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -123,12 +88,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+    <a class="nav-link" href="./dashboard.html"> 
+<span class="menu-text">Dashboard</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./shiny-apps.qmd"> 
+<span class="menu-text">Shiny Apps</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./shinylive.qmd"> 
+<span class="menu-text">Shinylive</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -146,7 +119,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#career-aspiration" id="toc-career-aspiration" class="nav-link active" data-scroll-target="#career-aspiration">Career Aspiration</a></li>
+  <li><a href="#skills" id="toc-skills" class="nav-link" data-scroll-target="#skills">Skills</a></li>
+  <li><a href="#education" id="toc-education" class="nav-link" data-scroll-target="#education">Education</a></li>
+  <li><a href="#dashboard" id="toc-dashboard" class="nav-link" data-scroll-target="#dashboard">Dashboard</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  <li><a href="#essay-on-shiny-apps" id="toc-essay-on-shiny-apps" class="nav-link" data-scroll-target="#essay-on-shiny-apps">Essay on Shiny Apps</a>
+  <ul class="collapse">
+  <li><a href="#what-is-a-shiny-app" id="toc-what-is-a-shiny-app" class="nav-link" data-scroll-target="#what-is-a-shiny-app">What is a Shiny App?</a></li>
+  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link" data-scroll-target="#how-it-works">How It Works</a></li>
+  <li><a href="#teaching-it-to-coworkers" id="toc-teaching-it-to-coworkers" class="nav-link" data-scroll-target="#teaching-it-to-coworkers">Teaching It to Coworkers</a></li>
+  </ul></li>
+  <li><a href="#essay-on-shinylive" id="toc-essay-on-shinylive" class="nav-link" data-scroll-target="#essay-on-shinylive">Essay on Shinylive</a>
+  <ul class="collapse">
+  <li><a href="#what-is-shinylive" id="toc-what-is-shinylive" class="nav-link" data-scroll-target="#what-is-shinylive">What is Shinylive?</a></li>
+  <li><a href="#comparison-with-shiny-apps" id="toc-comparison-with-shiny-apps" class="nav-link" data-scroll-target="#comparison-with-shiny-apps">Comparison with Shiny Apps</a></li>
+  <li><a href="#pros-and-cons" id="toc-pros-and-cons" class="nav-link" data-scroll-target="#pros-and-cons">Pros and Cons</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -172,76 +161,122 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p align="center">
+<img src="IMG_7083.jpeg" alt="Kristie Hermosillo" width="250">
+</p>
+<section id="career-aspiration" class="level2">
+<h2 class="anchored" data-anchor-id="career-aspiration">Career Aspiration</h2>
+<p>I’m interested in working in the marketing space—especially in roles where I can use data and digital tools to make smarter decisions. My goal is to help teams understand what’s working, what’s not, and how to communicate better with the people they’re trying to reach. I’ve been building skills in data visualization, dashboards, and interactive reporting so I can translate numbers into something useful. Eventually, I’d like to work somewhere that values both strategy and execution—where I can contribute to meaningful campaigns with real results.</p>
+</section>
+<section id="skills" class="level2">
+<h2 class="anchored" data-anchor-id="skills">Skills</h2>
+<ul>
+<li>R / Quarto / Shiny / Shinylive</li>
+<li>Python / Tableau</li>
+<li>Data cleaning and dashboarding</li>
+<li>Research communication</li>
+</ul>
+</section>
+<section id="education" class="level2">
+<h2 class="anchored" data-anchor-id="education">Education</h2>
+<p>A.S. Business Administration and Management, Mt.San Antonio College</p>
+<p>B.A. Business Administration and Management with a concentration in Marketing, University of La Verne</p>
+<p>MSDM Student, Cal Poly Pomona</p>
+</section>
+<section id="dashboard" class="level2">
+<h2 class="anchored" data-anchor-id="dashboard">Dashboard</h2>
 <p>This dashboard explores attendance trends for the Los Angeles Dodgers from 1958 to 2024…</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dodgers <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Dodgers_Attendance_Data.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 67 Columns: 5
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (1): Ballpark
-dbl (4): Year, Game_Avg_Attendance, Total_Season_Attendance, NL_Avg_Attendance
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dodgers, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Total_Season_Attendance)) <span class="sc">+</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"dodgerblue"</span>, <span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Dodgers Total Season Attendance (1958–2024)"</span>,</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Total Attendance"</span>, <span class="at">x =</span> <span class="st">"Year"</span>) <span class="sc">+</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="dashboard_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>dodgers_long <span class="ot">&lt;-</span> dodgers <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">c</span>(Total_Season_Attendance, NL_Avg_Attendance),</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"Category"</span>,</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"Attendance"</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dodgers_long, <span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> Attendance, <span class="at">color =</span> Category)) <span class="sc">+</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Dodgers vs. NL Average Season Attendance (1958–2024)"</span>,</span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Attendance"</span>, <span class="at">x =</span> <span class="st">"Year"</span>, <span class="at">color =</span> <span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(</span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Total_Season_Attendance"</span> <span class="ot">=</span> <span class="st">"dodgerblue"</span>, <span class="st">"NL_Avg_Attendance"</span> <span class="ot">=</span> <span class="st">"gray40"</span>),</span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Dodgers"</span>, <span class="st">"NL Average"</span>)</span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="dashboard_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This dashboard highlights the strong and consistent fanbase of the Los Angeles Dodgers, whose attendance has often outpaced the National League average across decades. Even during league-wide downturns or disrupted seasons, the Dodgers have remained a reliable draw. The comparison underscores the team’s legacy, loyalty, and lasting impact on Major League Baseball attendance trends.</p>
+<hr>
+</section>
+<section id="essay-on-shiny-apps" class="level2">
+<h2 class="anchored" data-anchor-id="essay-on-shiny-apps">Essay on Shiny Apps</h2>
+<section id="what-is-a-shiny-app" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-a-shiny-app">What is a Shiny App?</h3>
+<p>Shiny is an R package that turns analysis into interactive web applications using R.</p>
+</section>
+<section id="how-it-works" class="level3">
+<h3 class="anchored" data-anchor-id="how-it-works">How It Works</h3>
+<ul>
+<li>UI is defined using <code>fluidPage</code>, <code>sidebarLayout</code>, and other layout functions.</li>
+<li>Server logic lives in a reactive function that listens for input.</li>
+<li>Apps can be launched locally or hosted online (e.g., shinyapps.io).</li>
+</ul>
+</section>
+<section id="teaching-it-to-coworkers" class="level3">
+<h3 class="anchored" data-anchor-id="teaching-it-to-coworkers">Teaching It to Coworkers</h3>
+<p>If I were introducing Shiny to a teammate, I’d start by showing a basic layout with inputs and outputs. Then I’d walk them through how changes to an input — like a slider or dropdown — instantly update the visual or output using reactive logic. The key is that the UI and server components talk to each other live, making the app dynamic and customizable.</p>
+<hr>
+</section>
+</section>
+<section id="essay-on-shinylive" class="level2">
+<h2 class="anchored" data-anchor-id="essay-on-shinylive">Essay on Shinylive</h2>
+<section id="what-is-shinylive" class="level3">
+<h3 class="anchored" data-anchor-id="what-is-shinylive">What is Shinylive?</h3>
+<p>Shinylive is a lightweight version of Shiny that runs <strong>entirely in the browser</strong>, no server required.</p>
+</section>
+<section id="comparison-with-shiny-apps" class="level3">
+<h3 class="anchored" data-anchor-id="comparison-with-shiny-apps">Comparison with Shiny Apps</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 22%">
+<col style="width: 39%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>Shiny</th>
+<th>Shinylive</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Server Needed</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Deployment</td>
+<td>shinyapps.io, self-hosting</td>
+<td>Quarto Pub, GitHub Pages</td>
+</tr>
+<tr class="odd">
+<td>Best For</td>
+<td>Heavy computation</td>
+<td>Lightweight, browser-only apps</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="pros-and-cons" class="level3">
+<h3 class="anchored" data-anchor-id="pros-and-cons">Pros and Cons</h3>
+<p><strong>Pros:</strong> - Super easy to share — no hosting or server needed - Runs in the browser - Great for small apps and demos</p>
+<p><strong>Cons:</strong> - Can’t use all R packages (only browser-compatible ones) - Slower with large datasets - Not ideal for heavy data processing or authentication</p>
+<hr>
+<p><em>This site was built in Quarto as part of the M10 hands-on assignment. All charts, essays, and formatting reflect personal understanding of course materials as of April 2025.</em></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
